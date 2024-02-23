@@ -2,7 +2,12 @@ defmodule NewRelic.Config do
   @moduledoc """
   New Relic Agent Configuration
 
-  All configuration items can be set via Environment variables _or_ via `Application` config
+  All configuration items can be set via Environment variables _or_ via `Application` config.
+
+
+  # Note
+  Settings are cached to `:persistent_term`,
+  during startup by `NewRelic.Init.run/0` and are not automatically reloaded during runtime.
   """
 
   @doc """

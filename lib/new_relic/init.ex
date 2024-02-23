@@ -1,5 +1,9 @@
 defmodule NewRelic.Init do
-  @moduledoc false
+  @moduledoc """
+  Responsible for verifying runtime compatibility and populating `NewRelic.Config` settings.
+
+  The `run/0` function is the entry point which orchestrates the initialization process, and populates `NewRelic.Config`.
+  """
 
   alias NewRelic.Harvest.Collector
   alias NewRelic.Harvest.TelemetrySdk

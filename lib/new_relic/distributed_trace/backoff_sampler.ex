@@ -27,6 +27,9 @@ defmodule NewRelic.DistributedTrace.BackoffSampler do
     }
   end
 
+  @doc """
+  [PRI-0] Performance issue, single thread call to GenServer to check sample?.
+  """
   def sample?, do: GenServer.call(__MODULE__, :sample?)
 
   def handle_call(:sample?, _from, state) do
